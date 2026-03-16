@@ -1,0 +1,61 @@
+{
+  "name": "react-kavia",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start:open": "BROWSER=default react-scripts start",
+    "start:noopen": "BROWSER=none react-scripts start",
+    "start:port": "cross-env-shell \"PORT=${PORT:-3000} react-scripts start\"",
+
+    "build": "react-scripts build",
+    "build:prod": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
+    "analyze": "cross-env GENERATE_SOURCEMAP=true react-scripts build && npx source-map-explorer 'build/static/js/*.js'",
+
+    "test": "react-scripts test",
+    "test:ci": "cross-env CI=true react-scripts test --watchAll=false",
+    "test:coverage": "cross-env CI=true react-scripts test --watchAll=false --coverage",
+    "debug:test": "react-scripts test --runInBand --verbose",
+
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+
+    "typecheck": "tsc --noEmit",
+
+    "clean": "rimraf build",
+
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "rimraf": "^6.0.0",
+    "source-map-explorer": "^2.5.3",
+    "typescript": "^5.0.0"
+  }
+}
