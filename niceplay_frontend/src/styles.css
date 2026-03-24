@@ -1,0 +1,202 @@
+:root {
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted: #64748b;
+  --primary: #3b82f6;
+  --success: #06b6d4;
+  --error: #ef4444;
+
+  --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+  --border: rgba(100, 116, 139, 0.18);
+  --ring: rgba(59, 130, 246, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(900px 500px at 20% 10%, rgba(59, 130, 246, 0.12), transparent 60%),
+    radial-gradient(800px 500px at 90% 0%, rgba(6, 182, 212, 0.10), transparent 55%),
+    var(--bg);
+}
+
+.page {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: min(520px, 100%);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(100, 116, 139, 0.12);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--success));
+}
+
+.title {
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 12px;
+  margin: 2px 0 0;
+  color: var(--muted);
+}
+
+.button {
+  appearance: none;
+  border: 1px solid rgba(100, 116, 139, 0.22);
+  background: #fff;
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.06s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.button:hover {
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.status {
+  padding: 14px 0 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(100, 116, 139, 0.18);
+  background: rgba(249, 250, 251, 0.9);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.statusPill--win {
+  border-color: rgba(6, 182, 212, 0.35);
+  box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.15);
+}
+
+.statusPill--draw {
+  border-color: rgba(100, 116, 139, 0.28);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 6px 0 8px;
+}
+
+.square {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  border: 1px solid rgba(100, 116, 139, 0.18);
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  box-shadow: 0 6px 16px rgba(17, 24, 39, 0.06);
+  cursor: pointer;
+  transition: transform 0.06s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+  display: grid;
+  place-items: center;
+}
+
+.square:hover {
+  border-color: rgba(59, 130, 246, 0.30);
+  box-shadow: 0 0 0 4px var(--ring), 0 10px 20px rgba(17, 24, 39, 0.08);
+}
+
+.square:active {
+  transform: translateY(1px);
+}
+
+.square:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--ring), 0 10px 20px rgba(17, 24, 39, 0.08);
+}
+
+.square--filled {
+  cursor: default;
+}
+
+.squareValue {
+  font-size: clamp(34px, 7vw, 54px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--text);
+}
+
+.square--win {
+  border-color: rgba(6, 182, 212, 0.55);
+  box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.18), 0 10px 22px rgba(6, 182, 212, 0.12);
+}
+
+.footer {
+  padding-top: 10px;
+  border-top: 1px solid rgba(100, 116, 139, 0.12);
+  margin-top: 8px;
+}
+
+.help {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
